@@ -1,94 +1,81 @@
-# Agency CRM
+# Leadz - Agency CRM
 
-A modern, premium multi-tenant SaaS application designed for agencies to coordinate leads, track sales pipelines, and manage internal team roles.
+Leadz is a multi-tenant CRM built to coordinate leads, track sales pipelines, and manage internal team roles within agencies. It enforces strict workspace boundaries and provides robust role-based access control.
 
----
+## Key Features
 
-## 🚀 Key Features
+* **Multi-Tenant Architecture**: Enforces database-level isolation of all leads, contacts, and logs based on the user's workspace context.
+* **Workspace Registration**: Self-serve signup flow at `/signup` that registers a new workspace and initializes the creator as the workspace Admin.
+* **Role-Based Access Control (RBAC)**: Supports roles including Admin, Manager, Sales Representative, and Intern.
+* **Onboarding Security Gate**: Custom Rails middleware that intercepts initial login attempts for invited users, forcing a password reset before accessing CRM resources.
+* **Modern Interface**: Designed using React and Tailwind CSS, loaded via Inertia.js with no client-side routing overhead.
 
-* **Multi-Tenant Workspace Boundaries**: Enforces strict database-level isolation of all leads, contacts, and logs based on the user's registered workspace context.
-* **Seamless Agency Registration**: Instant self-serve signup flow at `/signup` that registers a new workspace and initializes the user as the workspace `Admin` owner.
-* **Team Management & Role Administration**: 
-  - Dynamic roster directory showing team members with role-specific styled color gradients.
-  - Interactive counter cards displaying member counts and category stats.
-  - Support for `Admin`, `Manager`, `Sales Representative`, and `Intern` access roles.
-* **Onboarding & Password Reset Gate**: 
-  - Generates secure, copyable 10-character temporary passwords when inviting team members.
-  - Intercepts initial login attempts via custom Rails middleware, forcing users to set a permanent password at the `/force_reset` gate before accessing any CRM data.
-* **Premium SaaS Aesthetics**: Uses Inter typography, smooth CSS backdrop gradients, soft input focus effects, transitions, and responsive navigation sidebars.
+## Technical Stack
 
----
+* **Backend Framework**: Ruby on Rails 8
+* **Frontend Integration**: Inertia.js
+* **Frontend Framework**: React
+* **Build System**: Vite
+* **Database**: PostgreSQL
+* **CSS Framework**: Tailwind CSS
+* **Code Quality**: RuboCop (Rails-omakase compliant)
 
-## 🛠️ Technology Stack
+## Prerequisites
 
-* **Backend**: Ruby on Rails (PostgreSQL Database)
-* **Frontend**: React (wrapped with Inertia.js, bundled via Vite)
-* **Styling**: Tailwind CSS
-* **Code Quality**: RuboCop static code analysis (Rails-omakase compliant)
-* **Deployment Blueprint**: Render IaC Configuration
-* **CI/CD**: GitHub Actions (linting, vulnerability checks, tests)
+* **Ruby**: 4.0.3 (or version specified in `.ruby-version`)
+* **Node.js**: >= 20.19.0 or >= 22.12.0 (required by Vite)
+* **PostgreSQL**: Local or Docker instance
 
----
+## Development Setup
 
-## 💻 Local Setup & Development
+### 1. Install Dependencies
 
-### Prerequisites
-
-Ensure you have the following installed locally:
-* **Ruby**: `~> 3.2` (or version specified in `.ruby-version`)
-* **Node.js**: `>= 20.0.0`
-* **PostgreSQL**: Running locally or via Docker
-
-### 1. Clone & Install Dependencies
-
-Clone the repository and install the gem and npm packages:
+Install the required Ruby gems and Node modules:
 
 ```bash
 bundle install
 npm install
 ```
 
-### 2. Configure Database
+### 2. Database Setup
 
-Setup the database environment and load seeds (contains sample workspace and user credentials):
+Create the database, run migrations, and load seed data:
 
 ```bash
 bundle exec rails db:prepare db:seed
 ```
 
-### 3. Run Development Servers
+### 3. Start the Development Servers
 
-Start the Rails application and Vite HMR dev server concurrently using the Rails dev command:
+Run the Rails application and Vite HMR development server concurrently:
 
 ```bash
 bin/dev
 ```
 
-Open your browser and navigate to `http://localhost:3000`.
+The application will be accessible at `http://localhost:3000`.
 
----
+## Testing and Code Quality
 
-## 🧪 Testing & Linting
+### Running Tests
 
-### Running Automated Tests
-Run the Rails controller, model, integration, and system test suite:
+Execute the Rails test suite (models, controllers, integration, and system tests):
 
 ```bash
 bundle exec rails test
 ```
 
-### Code Style Compliance (RuboCop)
-To check code compliance and linting constraints:
+### Code Style and Linting
+
+To analyze the codebase against style guidelines:
 
 ```bash
 bundle exec rubocop
 ```
 
-To run auto-correction on any style violations:
+To automatically resolve fixable style offenses:
 
 ```bash
 bundle exec rubocop -A
 ```
-
----
 
