@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_name: MyString
+  contact_name: MyString
+  email: MyString
+  phone: MyString
+  website: MyString
+  industry: MyString
+  city: MyString
+  notes: MyText
+  stage: MyString
+  archived: false
+  workspace: one
+  owner_id: 1
+
+two:
+  business_name: MyString
+  contact_name: MyString
+  email: MyString
+  phone: MyString
+  website: MyString
+  industry: MyString
+  city: MyString
+  notes: MyText
+  stage: MyString
+  archived: false
+  workspace: two
+  owner_id: 1

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lead: one
+  user: one
+  activity_type: MyString
+  notes: MyText
+
+two:
+  lead: two
+  user: two
+  activity_type: MyString
+  notes: MyText

@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "type": "module",
+  "devDependencies": {
+    "vite": "^8.0.0",
+    "vite-plugin-ruby": "^5.2.0"
+  },
+  "dependencies": {
+    "@inertiajs/react": "^3.4.0",
+    "@tailwindcss/vite": "^4.3.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.15",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.0"
+  }
+}
