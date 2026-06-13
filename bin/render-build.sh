@@ -7,3 +7,4 @@ npm install
 bundle exec vite build
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
+bundle exec rails db:migrate
